@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --ivory: #FAF7F2;
+  --blush: #F3E6E0;
+  --espresso: #1C1512;
+  --espresso-dark: #140F0D;
+  --gold: #C9A24B;
+  --gold-light: #DFC075;
+  --gold-dark: #A58032;
+  --gold-subtle: rgba(201, 162, 75, 0.25);
+  --line-gold: rgba(201, 162, 75, 0.35);
+  --line-espresso: rgba(28, 21, 18, 0.1);
+  --accent: #FAF7F2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--ivory);
+  color: var(--espresso);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ivory);
+  color: var(--espresso);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Typography tokens */
+.font-display {
+  font-family: 'Playfair Display', 'Fraunces', Georgia, serif;
+}
+
+.font-editorial-italic {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Widely tracked luxury uppercase overlines */
+.overline-luxury {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Masked line reveals */
+.line-reveal-outer {
+  overflow: hidden;
+  display: block;
+}
+
+.line-reveal-inner {
+  display: block;
+  transform: translateY(0%);
+  will-change: transform;
+}
+
+/* Luxury button styling */
+.btn-gold-pill {
+  background-color: var(--gold);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 14px 34px;
+  border-radius: 9999px;
+  border: 1px solid var(--gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(201, 162, 75, 0.28);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.btn-gold-pill:hover {
+  background-color: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(201, 162, 75, 0.4);
+}
+
+.btn-ghost-pill {
+  background-color: transparent;
+  color: var(--espresso);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 14px 34px;
+  border-radius: 9999px;
+  border: 1px solid rgba(28, 21, 18, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.btn-ghost-pill:hover {
+  border-color: var(--espresso);
+  background-color: rgba(28, 21, 18, 0.05);
+  transform: translateY(-2px);
+}
+
+.btn-espresso-pill {
+  background-color: var(--espresso);
+  color: var(--ivory);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 13px 30px;
+  border-radius: 9999px;
+  border: 1px solid var(--espresso);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.btn-espresso-pill:hover {
+  background-color: #2D231F;
+  border-color: #2D231F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 21, 18, 0.25);
+}
+
+/* Subtle gold hairlines */
+.hairline-gold {
+  border-color: var(--line-gold);
+}
+
+.hairline-subtle {
+  border-color: var(--line-espresso);
+}
+
+/* Editorial 3:4 portrait product cards */
+.card-portrait-3-4 {
+  aspect-ratio: 3 / 4;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CEBE;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Smooth marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Lenis smooth scroll adjustments */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
